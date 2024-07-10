@@ -13,6 +13,29 @@ steps:
     ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/kubernetes-assignment-428919/k8s-assignment/container1:lt']
- 
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      gcloud container clusters get-credentials k8s-assignment --zone us-central1-c --project kubernetes-assignment-428919
+
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+    [
+      'apply',
+      '-f',
+      'container1-deployment.yaml'
+    ]
+
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+    [
+      'apply',
+      '-f',
+      'persistent-volume.yaml'
+    ]
+
 images:
 - 'us-central1-docker.pkg.dev/kubernetes-assignment-428919/k8s-assignment/container1:lt'
