@@ -9,6 +9,8 @@ const PORT = 6000;
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
+console.log("Testing CICD pods");
+
 // Persistent storage path
 const PERSISTENT_STORAGE_PATH = '/shrey_PV_dir';
 
