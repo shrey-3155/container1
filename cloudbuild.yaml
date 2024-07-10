@@ -20,13 +20,15 @@ steps:
     - '-c'
     - |
       gcloud container clusters get-credentials k8s-assignment --zone us-central1-c --project kubernetes-assignment-428919
+      
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
     - '-c'
     - |
       gcloud container clusters get-credentials k8s-assignment --zone us-central1-c --project kubernetes-assignment-428919 kubectl apply -f container1-deployment.yaml
-  - name: 'gcr.io/cloud-builders/gcloud'
+      
+- name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
     - '-c'
