@@ -9,7 +9,7 @@ const PORT = 6000;
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
-console.log("Testing Terraform file");
+console.log("Testing Terraform file and podss");
 
 // Persistent storage path
 const PERSISTENT_STORAGE_PATH = '/shrey_PV_dir';
