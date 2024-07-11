@@ -43,21 +43,5 @@ steps:
       gcloud container clusters get-credentials k8s-assignment --zone us-central1-c --project kubernetes-assignment-428919 
       kubectl apply -f persistent-volume.yaml
 
-# - name: 'gcr.io/cloud-builders/kubectl'
-#   args:
-#     [
-#       'apply',
-#       '-f',
-#       'container1-deployment.yaml'
-#     ]
-
-# - name: 'gcr.io/cloud-builders/kubectl'
-#   args:
-#     [
-#       'apply',
-#       '-f',
-#       'persistent-volume.yaml'
-#     ]
-
 images:
 - 'us-central1-docker.pkg.dev/kubernetes-assignment-428919/k8s-assignment/container1:lt'
